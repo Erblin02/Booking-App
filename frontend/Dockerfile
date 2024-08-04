@@ -1,10 +1,12 @@
-FROM node:latest
+FROM node:18
 
-WORKDIR .
+WORKDIR /app
 
-COPY ./app ./
+COPY ./app/package*.json ./
 
 RUN npm install
+
+COPY ./app ./
 
 RUN npm run build
 

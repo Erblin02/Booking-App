@@ -1,13 +1,14 @@
-FROM node:latest
+FROM node:18
 
-WORKDIR .
+WORKDIR /app
 
-COPY ./app ./
+COPY ./app/package*.json ./
 
 RUN npm install
 
-COPY ./app .
+COPY ./app ./
 
 EXPOSE 5000
 
 CMD ["node", "index.js"]
+
